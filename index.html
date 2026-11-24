@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qaren.LB — Smart Shopping & Multi-Store Comparison</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Modular Feature Scripts (Each section isolated in its own file) -->
+  <script defer src="./js/db-adapter.js"></script>
+  <script defer src="./js/category-manager.js"></script>
+  <script defer src="./js/search-compare.js"></script>
+  <script defer src="./js/smart-cart.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+  <header class="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+    <div>
+      <h1 class="text-xl font-bold text-slate-900">Qaren.LB</h1>
+      <p class="text-xs text-slate-500">Lebanon Smart Shopping & Multi-Store Comparison</p>
+    </div>
+    <span id="sync-status" class="text-xs px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-medium">
+      Ready to Connect
+    </span>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Left / Main 2 Columns: Category & Comparison -->
+    <section class="lg:col-span-2 space-y-6">
+      <div id="category-manager- mount" class="bg-white rounded-xl border border-slate-200 p-5">
+        <h2 class="font-semibold text-base mb-2">Categories & Search</h2>
+        <div id="category-list" class="flex flex-wrap gap-2 text-sm text-slate-600">Loading categories...</div>
+      </div>
+
+      <div id="search-compare-mount" class="bg-white rounded-xl border border-slate-200 p-5">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-semibold text-base">Comparison Results</h2>
+          <span id="active-tab-badge" class="text-xs bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-md">Verified Websites</span>
+        </div>
+        <div id="results-container" class="text-sm text-slate-600">Loading saved products from Google Sheet...</div>
+      </div>
+    </section>
+
+    <!-- Right Column: Multi-Store Smart Cart -->
+    <aside id="smart-cart-mount" class="bg-white rounded-xl border border-slate-200 p-5 h-fit">
+      <h2 class="font-semibold text-base mb-3">Multi-Store Smart Cart</h2>
+      <div id="cart-groups-container" class="text-sm text-slate-600">Loading grouped cart & store replies...</div>
+    </aside>
+  </main>
+</body>
+</html>
